@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<api context="/payments" name="PaymentAPI" xmlns="http://ws.apache.org/ns/synapse">
+    <resource methods="POST" uri-template="/batch">
+        <inSequence>
+            <log category="INFO" logMessageID="false" logFullPayload="false">
+                <message>${payload.PaymentBatch.BatchId}</message>
+            </log>
+            <variable name="batchId" type="STRING" expression="${payload.PaymentBatch.BatchId}"/>
+            <variable name="processingDate" type="STRING" expression="${payload.PaymentBatch.ProcessingDate}"/>
+            <foreach collection="${payload.PaymentBatch.Payments.Payment}" parallel-execution="false" update-original="false" target-variable="processedPayments" result-content-type="JSON" continue-without-aggregation="false">
+                <sequence>
+                    <log category="INFO" logMessageID="false" logFullPayload="false">
+                        <message>Processing: ${payload.TxId}</message>
+                    </log>
+                    <log category="INFO" logMessageID="false" logFullPayload="false">
+                        <message>Message: ${payload}</message>
+                    </log>
+                    <datamapper config="resources:datamapper/PaymentMapper/PaymentMapper.dmc" inputSchema="resources:datamapper/PaymentMapper/PaymentMapper_inputSchema.json" outputSchema="resources:datamapper/PaymentMapper/PaymentMapper_outputSchema.json"/>
+                </sequence>
+            </foreach>
+            <payloadFactory media-type="json" template-type="default">
+                <format>{ "batchId": ${vars.batchId}, "processingDate": ${vars.processingDate}, "status": "PROCESSED", "isoStandard": "pacs.008.001.12", "transactions": ${vars.processedPayments}}</format>
+            </payloadFactory>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+    <resource methods="POST" uri-template="/batch/csv">
+        <inSequence>
+            <property name="messageType" scope="axis2" type="STRING" value="application/xml"/>
+            <log category="INFO" logMessageID="false" logFullPayload="false">
+                <message>${payload.PaymentBatch.BatchId}</message>
+            </log>
+            <payloadFactory media-type="text" template-type="freemarker">
+                <format><![CDATA[TxId,SenderName,ReceiverName,Amount,Currency,ISOType,Status
+<#list payload.PaymentBatch.Payments.Payment as p>
+${p.TxId},${p.SenderName},${p.ReceiverName},${p.Amount},${p.Currency},pacs.008.001.12,ACCEPTED
+</#list>
+]]></format>
+            </payloadFactory>
+            <header name="Content-Type" action="set" scope="transport" value="text/csv"/>
+            <respond/>
+        </inSequence>
+        <faultSequence>
+        </faultSequence>
+    </resource>
+</api>

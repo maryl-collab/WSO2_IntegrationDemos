@@ -1,0 +1,16 @@
+{
+  "type": "API",
+  "requests": [],
+  "/batch/csv": {
+    "requests": [
+      {
+        "name": "Default",
+        "contentType": "application/json",
+        "content": {},
+        "queryParams": {},
+        "pathParams": {}
+      }
+    ],
+    "defaultRequest": "Default"
+  }
+}
