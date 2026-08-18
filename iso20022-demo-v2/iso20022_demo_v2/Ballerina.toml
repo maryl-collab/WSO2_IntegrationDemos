@@ -1,0 +1,9 @@
+[package]
+org = "maryorg"
+name = "iso20022_demo_v2"
+version = "0.1.0"
+distribution = "2201.13.4"
+title = "iso20022-Demo_v2"
+
+[build-options]
+sticky = true

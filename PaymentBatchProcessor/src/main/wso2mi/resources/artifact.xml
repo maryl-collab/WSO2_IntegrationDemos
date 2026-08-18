@@ -24,4 +24,28 @@
       <properties></properties>
     </item>
   </artifact>
+  <artifact name="resources_datamapper_MappingXMLtoJSON_MappingXMLtoJSON_dmc" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>MappingXMLtoJSON.dmc</file>
+      <path>/_system/governance/mi-resources/datamapper/MappingXMLtoJSON</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_datamapper_MappingXMLtoJSON_MappingXMLtoJSON_inputSchema_json" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>MappingXMLtoJSON_inputSchema.json</file>
+      <path>/_system/governance/mi-resources/datamapper/MappingXMLtoJSON</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_datamapper_MappingXMLtoJSON_MappingXMLtoJSON_outputSchema_json" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>MappingXMLtoJSON_outputSchema.json</file>
+      <path>/_system/governance/mi-resources/datamapper/MappingXMLtoJSON</path>
+      <mediaType>text/plain</mediaType>
+      <properties/>
+    </item>
+  </artifact>
 </artifacts>

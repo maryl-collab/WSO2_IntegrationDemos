@@ -1,0 +1,3 @@
+- org: maryorg
+  project: iso20022-demo-v2
+  local: true

@@ -1,0 +1,23 @@
+{
+    "creditTransfer": {
+        "paymentId": "TX001",
+        "messageType": "pacs.008.001.12",
+        "debtor": {
+            "name": "Acme Corp",
+            "account": "ACC-BR-001",
+            "bic": "BRASBRRJXXX"
+        },
+        "creditor": {
+            "name": "Vendor Ltda",
+            "account": "ACC-BR-002",
+            "bic": "ITAUBRSPXXX"
+        },
+        "amount": {
+            "value": 15000.00,
+            "currency": "BRL"
+        },
+        "remittanceInfo": "NF-2025-001",
+        "settlementMethod": "CLRG",
+        "chargeBearer": "SHAR"
+    }
+}

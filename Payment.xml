@@ -1,0 +1,12 @@
+<JsonObject>
+    <TxId>TX001</TxId>
+    <SenderName>Acme Corp</SenderName>
+    <SenderId>ACC-BR-001</SenderId>
+    <SenderBIC>BRASBRRJXXX</SenderBIC>
+    <ReceiverName>Vendor Ltda</ReceiverName>
+    <ReceiverId>ACC-BR-002</ReceiverId>
+    <ReceiverBIC>ITAUBRSPXXX</ReceiverBIC>
+    <Amount>15000.00</Amount>
+    <Currency>BRL</Currency>
+    <Reference>NF-2025-001</Reference>
+</JsonObject>
