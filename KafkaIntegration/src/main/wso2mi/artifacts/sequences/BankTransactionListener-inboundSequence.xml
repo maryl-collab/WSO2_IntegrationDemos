@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<sequence name="BankTransactionListener-inboundSequence" trace="disable" xmlns="http://ws.apache.org/ns/synapse">
+    <log category="INFO" logMessageID="false" logFullPayload="false">
+        <message>Kafka event received, data = ${payload}
+</message>
+    </log>
+    <payloadFactory media-type="json" template-type="default">
+        <format>{
+            "eventType": "transaction",
+            "source": "bank-transactions",
+            "data": ${payload}
+            }
+</format>
+    </payloadFactory>
+    <kafkaTransport.publishMessages configKey="KafkaConnection">
+        <topic>bank-audit</topic>
+        <partitionNo>0</partitionNo>
+        <key></key>
+        <keySchema></keySchema>
+        <keySchemaId></keySchemaId>
+        <keySchemaMetadata></keySchemaMetadata>
+        <valueSchema></valueSchema>
+        <valueSchemaId></valueSchemaId>
+        <keySchemaSubject></keySchemaSubject>
+        <keySchemaVersion></keySchemaVersion>
+        <keySchemaSoftDeleted>false</keySchemaSoftDeleted>
+        <valueSchemaSubject></valueSchemaSubject>
+        <valueSchemaVersion></valueSchemaVersion>
+        <valueSchemaMetadata></valueSchemaMetadata>
+        <valueSchemaSoftDeleted>false</valueSchemaSoftDeleted>
+        <value></value>
+        <forwardExistingHeaders>None</forwardExistingHeaders>
+        <customHeaders>[]</customHeaders>
+        <customHeaderExpression></customHeaderExpression>
+    </kafkaTransport.publishMessages>
+</sequence>

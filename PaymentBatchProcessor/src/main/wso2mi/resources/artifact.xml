@@ -45,6 +45,30 @@
       <file>MappingXMLtoJSON_outputSchema.json</file>
       <path>/_system/governance/mi-resources/datamapper/MappingXMLtoJSON</path>
       <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_datamapper_TestedeMapeodeDatos_TestedeMapeodeDatos_dmc" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>TestedeMapeodeDatos.dmc</file>
+      <path>/_system/governance/mi-resources/datamapper/TestedeMapeodeDatos</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_datamapper_TestedeMapeodeDatos_TestedeMapeodeDatos_inputSchema_json" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>TestedeMapeodeDatos_inputSchema.json</file>
+      <path>/_system/governance/mi-resources/datamapper/TestedeMapeodeDatos</path>
+      <mediaType>text/plain</mediaType>
+      <properties></properties>
+    </item>
+  </artifact>
+  <artifact name="resources_datamapper_TestedeMapeodeDatos_TestedeMapeodeDatos_outputSchema_json" groupId="com.microintegrator.projects" version="1.0.0" type="registry/resource" serverRole="EnterpriseIntegrator">
+    <item>
+      <file>TestedeMapeodeDatos_outputSchema.json</file>
+      <path>/_system/governance/mi-resources/datamapper/TestedeMapeodeDatos</path>
+      <mediaType>text/plain</mediaType>
       <properties/>
     </item>
   </artifact>

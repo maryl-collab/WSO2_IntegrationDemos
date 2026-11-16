@@ -1,0 +1,16 @@
+{
+  "type": "SEQUENCE",
+  "requests": [
+    {
+      "name": "request",
+      "contentType": "application/json",
+      "content": {
+        "id": "TXN001",
+        "type": "deposit",
+        "accountId": "ACC123",
+        "amount": 500
+      }
+    }
+  ],
+  "defaultRequest": "request"
+}
